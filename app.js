@@ -4,26 +4,26 @@ let todos = JSON.parse(localStorage.getItem("todos") || "[]");
 if(classes.length===0){
 classes=[
 {day:"Monday",subject:"S&UL Lab",teacher:"Harjeet",start:"09:00",end:"11:00"},
-{day:"Monday",subject:"DBMS",teacher:"Deepali",start:"11:00",end:"12:00"},
-{day:"Monday",subject:"Java",teacher:"Ridhum",start:"14:00",end:"15:00"},
+{day:"Monday",subject:"DBMS",teacher:"Deepali",start:"11:00",end:"13:00"},
+{day:"Monday",subject:"Java",teacher:"Ridhum",start:"14:00",end:"16:00"},
 
-{day:"Tuesday",subject:"DBMS",teacher:"Harsh/Niharika",start:"09:00",end:"10:00"},
-{day:"Tuesday",subject:"Java",teacher:"Ridhum",start:"11:00",end:"12:00"},
+{day:"Tuesday",subject:"DBMS",teacher:"Harsh/Niharika",start:"09:00",end:"11:00"},
+{day:"Tuesday",subject:"Java",teacher:"Ridhum",start:"11:00",end:"13:00"},
 {day:"Tuesday",subject:"OT",teacher:"Reetu",start:"14:00",end:"15:00"},
 {day:"Tuesday",subject:"Applied Prob",teacher:"Manpreet",start:"15:00",end:"16:00"},
 
-{day:"Wednesday",subject:"Java",teacher:"Deepali/Deepak",start:"09:00",end:"10:00"},
-{day:"Wednesday",subject:"Java",teacher:"Ridhum",start:"11:00",end:"12:00"},
-{day:"Wednesday",subject:"S&UL",teacher:"Surender",start:"14:00",end:"15:00"},
+{day:"Wednesday",subject:"Java",teacher:"Deepali/Deepak",start:"09:00",end:"11:00"},
+{day:"Wednesday",subject:"Java",teacher:"Ridhum",start:"11:00",end:"13:00"},
+{day:"Wednesday",subject:"S&UL",teacher:"Surender",start:"14:00",end:"16:00"},
 
-{day:"Thursday",subject:"S&UL",teacher:"Divyanshi/Harjeet",start:"09:00",end:"10:00"},
+{day:"Thursday",subject:"S&UL",teacher:"Divyanshi/Harjeet",start:"09:00",end:"11:00"},
 {day:"Thursday",subject:"Java Lab",teacher:"Deepak/Ridhum",start:"11:00",end:"13:00"},
 {day:"Thursday",subject:"Applied Prob",teacher:"Manpreet",start:"14:00",end:"15:00"},
 {day:"Thursday",subject:"OT",teacher:"Reetu",start:"15:00",end:"16:00"},
 
 {day:"Friday",subject:"Applied Prob",teacher:"Manpreet",start:"09:00",end:"10:00"},
 {day:"Friday",subject:"OT",teacher:"Reetu",start:"10:00",end:"11:00"},
-{day:"Friday",subject:"S&UL",teacher:"Surender",start:"11:00",end:"12:00"},
+{day:"Friday",subject:"S&UL",teacher:"Surender",start:"11:00",end:"13:00"},
 {day:"Friday",subject:"DBMS Lab",teacher:"Niharika/Harsh",start:"14:00",end:"15:00"},
 {day:"Friday",subject:"DBMS",teacher:"Harsh",start:"15:00",end:"16:00"}
 ];
@@ -75,7 +75,7 @@ let today=todayName();
 classes.filter(c=>c.day===today).forEach(c=>{
 let [h,m]=c.start.split(":").map(Number);
 let alertTime=new Date();
-alertTime.setHours(h,m-5,0);
+alertTime.setHours(h,m-10,0);
 let diff=alertTime-new Date();
 if(diff>0){
 setTimeout(()=>{
