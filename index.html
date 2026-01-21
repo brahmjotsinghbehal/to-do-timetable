@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Class + Todo PWA</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <h1>📚 My Class + Todo</h1>
+
+  <div class="card">
+    <h2>Add Class</h2>
+    <select id="day">
+      <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+      <option>Thursday</option><option>Friday</option>
+    </select>
+    <input id="subject" placeholder="Subject">
+    <input id="teacher" placeholder="Teacher">
+    <input id="start" type="time">
+    <input id="end" type="time">
+    <button onclick="addClass()">Add Class</button>
+  </div>
+
+  <div class="card">
+    <h2>Today's Classes</h2>
+    <div id="todayList"></div>
+  </div>
+
+  <div class="card">
+    <h2>Add Todo</h2>
+    <input id="todoText" placeholder="Task">
+    <button onclick="addTodo()">Add Todo</button>
+  </div>
+
+  <div class="card">
+    <h2>Todo List</h2>
+    <div id="todoList"></div>
+  </div>
+</div>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+</body>
+</html>
